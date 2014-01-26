@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface MPUYViewController : UIViewController
+@class MPUYMap;
+
+@interface MPUYViewController : UIViewController <MKMapViewDelegate>
+
+@property (strong, nonatomic) MPUYMap * mapModel;
+
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
 @end

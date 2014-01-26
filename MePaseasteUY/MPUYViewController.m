@@ -7,6 +7,7 @@
 //
 
 #import "MPUYViewController.h"
+#import "MPUYMap.h"
 
 @interface MPUYViewController ()
 
@@ -17,13 +18,40 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Map Model, encapsulate specific behavior
+    self.mapModel = [[MPUYMap alloc] init];
+
+    // Set initial map options
+    [self setMapOptions];
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self setMapInitialRegion];
+}
+
+#pragma mark - Private Map Methods
+
+- (void) setMapOptions {
+    self.mapView.mapType = MKMapTypeStandard;
+    self.mapView.showsUserLocation = YES;
+}
+
+- (void) setMapInitialRegion {
+    MKCoordinateRegion region;
+    region.center.latitude = [[self.mapModel initialLatitude] floatValue];
+    region.center.longitude = [[self.mapModel initialLongitude] floatValue];
+    region.span.latitudeDelta = [[self.mapModel mapSpanX] floatValue];
+    region.span.longitudeDelta = [[self.mapModel mapSpanY] floatValue];
+    
+    [self.mapView setRegion:region animated:YES];
 }
 
 @end
