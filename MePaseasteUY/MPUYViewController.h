@@ -10,10 +10,12 @@
 #import <MapKit/MapKit.h>
 
 @class MPUYMap;
+@class MPUYMarkers;
 
 @interface MPUYViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) MPUYMap * mapModel;
+@property (strong, nonatomic) MPUYMarkers * markersModel;
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 

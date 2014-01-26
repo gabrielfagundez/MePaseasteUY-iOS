@@ -23,6 +23,7 @@
 		80EBEC1F189560DE005967DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EBEC1E189560DE005967DD /* MapKit.framework */; };
 		80EBEC2218956CF0005967DD /* MPUYMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EBEC2118956CF0005967DD /* MPUYMap.m */; };
 		80EBEC2818958E79005967DD /* MPUYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EBEC2718958E79005967DD /* MPUYViewController.m */; };
+		80EBEC2B1895CAB6005967DD /* MPUYMarkers.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EBEC2A1895CAB6005967DD /* MPUYMarkers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		80EBEC2118956CF0005967DD /* MPUYMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPUYMap.m; path = Models/MPUYMap.m; sourceTree = "<group>"; };
 		80EBEC2618958E79005967DD /* MPUYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUYViewController.h; sourceTree = "<group>"; };
 		80EBEC2718958E79005967DD /* MPUYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUYViewController.m; sourceTree = "<group>"; };
+		80EBEC291895CAB6005967DD /* MPUYMarkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPUYMarkers.h; path = Models/MPUYMarkers.h; sourceTree = "<group>"; };
+		80EBEC2A1895CAB6005967DD /* MPUYMarkers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPUYMarkers.m; path = Models/MPUYMarkers.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				80EBEBF018955E7E005967DD /* Supporting Files */,
 				80EBEC2018956CF0005967DD /* MPUYMap.h */,
 				80EBEC2118956CF0005967DD /* MPUYMap.m */,
+				80EBEC291895CAB6005967DD /* MPUYMarkers.h */,
+				80EBEC2A1895CAB6005967DD /* MPUYMarkers.m */,
 			);
 			path = MePaseasteUY;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				80EBEBF618955E7E005967DD /* main.m in Sources */,
 				80EBEC2818958E79005967DD /* MPUYViewController.m in Sources */,
 				80EBEC2218956CF0005967DD /* MPUYMap.m in Sources */,
+				80EBEC2B1895CAB6005967DD /* MPUYMarkers.m in Sources */,
 				80EBEBFA18955E7E005967DD /* MPUYAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
