@@ -24,24 +24,35 @@
 
     // Set initial map options
     [self setMapOptions];
+    
+    // Set gesture recognizion
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addMarkerToCurrentTouch:)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    tapRecognizer.numberOfTouchesRequired = 1;
+    [self.mapView addGestureRecognizer:tapRecognizer];
 
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [self setMapInitialRegion];
 }
 
+
+
+
 #pragma mark - Private Map Methods
 
 - (void) setMapOptions {
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
+    [self.mapView setMapType:MKMapTypeStandard];
+    [self.mapView setZoomEnabled:YES];
+    [self.mapView setScrollEnabled:YES];
 }
 
 - (void) setMapInitialRegion {
@@ -52,6 +63,17 @@
     region.span.longitudeDelta = [[self.mapModel mapSpanY] floatValue];
     
     [self.mapView setRegion:region animated:YES];
+}
+
+-(IBAction)addMarkerToCurrentTouch:(UITapGestureRecognizer *)recognizer
+{
+    CGPoint point = [recognizer locationInView:self.mapView];
+    CLLocationCoordinate2D tapPoint = [self.mapView convertPoint:point toCoordinateFromView:self.view];
+    
+    MKPointAnnotation *recognizedPoint = [[MKPointAnnotation alloc] init];
+    recognizedPoint.coordinate = tapPoint;
+    
+    [self.mapView addAnnotation:recognizedPoint];
 }
 
 @end
