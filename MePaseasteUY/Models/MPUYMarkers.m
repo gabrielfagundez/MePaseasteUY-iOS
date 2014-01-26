@@ -11,12 +11,17 @@
 @implementation MPUYMarkers
 
 - (void) addMarker: (float)latitude :(float)longitude{
-
-    NSLog(@"Latitud: %f", latitude);
-    NSLog(@"Longitud: %f", longitude);
+    // If neccesary, initialize the array
+    if (self.markersArray == nil){
+        self.markersArray = [[NSMutableArray alloc] init];
+    };
     
-//    NSDictionary *marker = [[NSDictionary alloc] initWithObjectsAndKeys:@"value1", @"x", @"value2", @"y", nil];
-//    NSLog([NSString stringWithFormat:@"%@", [marker objectForKey:@"x"]]);
+    NSDictionary *marker = [[NSDictionary alloc]
+                            initWithObjectsAndKeys:
+                                [NSNumber numberWithFloat:latitude], @"latitude",
+                                [NSNumber numberWithFloat:longitude], @"longitude", nil];
+    
+    [self.markersArray addObject:marker];
     
 };
 
