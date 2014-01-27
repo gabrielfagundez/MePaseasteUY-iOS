@@ -9,6 +9,8 @@
 #import "MPUYViewController.h"
 #import "MPUYMap.h"
 #import "MPUYMarkers.h"
+#import "MPUYMarkersViewController.h"
+#import "MPUYAppDelegate.h"
 
 @interface MPUYViewController ()
 
@@ -34,16 +36,13 @@
     [self.mapView addGestureRecognizer:tapRecognizer];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [self setMapInitialRegion];
 }
-
-
 
 
 #pragma mark - Private Map Methods
@@ -78,6 +77,10 @@
     
     // Add the point to the current array of markers
     [self.markersModel addMarker:recognizedPoint.coordinate.latitude :recognizedPoint.coordinate.longitude];
+    
+    // Set the markers in the delegate
+    MPUYAppDelegate *appDelegate = (MPUYAppDelegate*) [UIApplication sharedApplication].delegate;
+    appDelegate.markers = self.markersModel.markersArray;
     
 }
 

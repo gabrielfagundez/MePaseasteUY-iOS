@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+// Custom properties
+@property (strong, nonatomic, retain) NSArray * markers;
+
 @end
