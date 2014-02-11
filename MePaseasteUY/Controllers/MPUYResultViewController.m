@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"Estoy en el nuevo controller!");
 	// Do any additional setup after loading the view.
 }
 
