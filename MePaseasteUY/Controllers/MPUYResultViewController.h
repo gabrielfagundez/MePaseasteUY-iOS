@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+
+@class MPUYMap;
 
 @interface MPUYResultViewController : UIViewController
+
+@property (strong, nonatomic) MPUYMap * mapModel;
+@property (strong, nonatomic) NSArray * markersArray;
+
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
 @end

@@ -134,16 +134,12 @@
 		80EBEBEF18955E7E005967DD /* MePaseasteUY */ = {
 			isa = PBXGroup;
 			children = (
-				80EBEC2C189692A3005967DD /* MPUYMarkersViewController.h */,
-				80EBEC2D189692A3005967DD /* MPUYMarkersViewController.m */,
-				80EBEC2F18969AA0005967DD /* MPUYMarkerTableViewCell.h */,
-				80EBEC3018969AA0005967DD /* MPUYMarkerTableViewCell.m */,
 				80EBEBFB18955E7E005967DD /* Main.storyboard */,
-				80EBEBF018955E7E005967DD /* Supporting Files */,
-				80EBEC351896E9B4005967DD /* MPUYMarkerDetailViewController.h */,
-				80EBEC361896E9B4005967DD /* MPUYMarkerDetailViewController.m */,
+				80EBEC2618958E79005967DD /* MPUYViewController.h */,
+				80EBEC2718958E79005967DD /* MPUYViewController.m */,
 				80CB27FE18AACD770097D09E /* MPUYResultViewController.h */,
 				80CB27FF18AACD770097D09E /* MPUYResultViewController.m */,
+				80EBEBF018955E7E005967DD /* Supporting Files */,
 			);
 			path = MePaseasteUY;
 			sourceTree = "<group>";
@@ -151,10 +147,14 @@
 		80EBEBF018955E7E005967DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				80EBEC351896E9B4005967DD /* MPUYMarkerDetailViewController.h */,
+				80EBEC361896E9B4005967DD /* MPUYMarkerDetailViewController.m */,
+				80EBEC2C189692A3005967DD /* MPUYMarkersViewController.h */,
+				80EBEC2D189692A3005967DD /* MPUYMarkersViewController.m */,
+				80EBEC2F18969AA0005967DD /* MPUYMarkerTableViewCell.h */,
+				80EBEC3018969AA0005967DD /* MPUYMarkerTableViewCell.m */,
 				80EBEC2A1895CAB6005967DD /* MPUYMarkers.m */,
 				80EBEC291895CAB6005967DD /* MPUYMarkers.h */,
-				80EBEC2618958E79005967DD /* MPUYViewController.h */,
-				80EBEC2718958E79005967DD /* MPUYViewController.m */,
 				80EBEC0118955E7E005967DD /* Images.xcassets */,
 				80EBEC2018956CF0005967DD /* MPUYMap.h */,
 				80EBEC2118956CF0005967DD /* MPUYMap.m */,
