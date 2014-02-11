@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80CB280018AACD770097D09E /* MPUYResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CB27FF18AACD770097D09E /* MPUYResultViewController.m */; };
 		80EBEBEA18955E7E005967DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EBEBE918955E7E005967DD /* Foundation.framework */; };
 		80EBEBEC18955E7E005967DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EBEBEB18955E7E005967DD /* CoreGraphics.framework */; };
 		80EBEBEE18955E7E005967DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EBEBED18955E7E005967DD /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80CB27FE18AACD770097D09E /* MPUYResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPUYResultViewController.h; path = Controllers/MPUYResultViewController.h; sourceTree = "<group>"; };
+		80CB27FF18AACD770097D09E /* MPUYResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPUYResultViewController.m; path = Controllers/MPUYResultViewController.m; sourceTree = "<group>"; };
 		80EBEBE618955E7E005967DD /* MePaseasteUY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MePaseasteUY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EBEBE918955E7E005967DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		80EBEBEB18955E7E005967DD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,6 +142,8 @@
 				80EBEBF018955E7E005967DD /* Supporting Files */,
 				80EBEC351896E9B4005967DD /* MPUYMarkerDetailViewController.h */,
 				80EBEC361896E9B4005967DD /* MPUYMarkerDetailViewController.m */,
+				80CB27FE18AACD770097D09E /* MPUYResultViewController.h */,
+				80CB27FF18AACD770097D09E /* MPUYResultViewController.m */,
 			);
 			path = MePaseasteUY;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				80EBEC2818958E79005967DD /* MPUYViewController.m in Sources */,
 				80EBEC2218956CF0005967DD /* MPUYMap.m in Sources */,
 				80EBEC2B1895CAB6005967DD /* MPUYMarkers.m in Sources */,
+				80CB280018AACD770097D09E /* MPUYResultViewController.m in Sources */,
 				80EBEC371896E9B4005967DD /* MPUYMarkerDetailViewController.m in Sources */,
 				80EBEBFA18955E7E005967DD /* MPUYAppDelegate.m in Sources */,
 				80EBEC3118969AA0005967DD /* MPUYMarkerTableViewCell.m in Sources */,

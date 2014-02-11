@@ -55,7 +55,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQi-iS-sJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="-1089"/>
+            <point key="canvasLocation" x="-708" y="-1095"/>
         </scene>
         <!--Markers View Controller - Marcadores-->
         <scene sceneID="VrE-Iz-vbh">
@@ -65,9 +65,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <containerView key="tableHeaderView" contentMode="scaleToFill" id="WIl-jb-Asu">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="aQq-6R-aZa" kind="embed" id="5zs-95-ZiU"/>
+                            </connections>
+                        </containerView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MarkerTableViewCell" rowHeight="71" id="Rm1-dj-Pdw" customClass="MPUYMarkerTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="71"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rm1-dj-Pdw" id="4zG-5B-gbG">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="70"/>
@@ -113,6 +121,24 @@
             </objects>
             <point key="canvasLocation" x="390" y="-373"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="CXx-Qa-srC">
+            <objects>
+                <viewController id="oUt-5X-SeU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lgj-gq-8rj"/>
+                        <viewControllerLayoutGuide type="bottom" id="xm8-27-UGp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7n4-ga-rqp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c6Z-Eg-7jB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="570"/>
+        </scene>
         <!--Marker Detail View Controller-->
         <scene sceneID="CTR-zM-sJn">
             <objects>
@@ -133,9 +159,6 @@
                                 <rect key="frame" x="0.0" y="401" width="320" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="RW3-J7-nwP" kind="embed" id="4hJ-YB-8u7"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -166,25 +189,45 @@
             <point key="canvasLocation" x="-164" y="-373"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="yYk-8I-ecg">
+        <scene sceneID="fXn-2C-s0D">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RW3-J7-nwP" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="aQq-6R-aZa" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Xes-Fm-8wG"/>
-                        <viewControllerLayoutGuide type="bottom" id="0dh-Xk-YVT"/>
+                        <viewControllerLayoutGuide type="top" id="wfF-Jh-Btm"/>
+                        <viewControllerLayoutGuide type="bottom" id="m6w-ya-afr"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aQa-72-T1N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RTA-oY-R15">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9L-BQ-D8X">
+                                <rect key="frame" x="132" y="7" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Calcular">
+                                    <color key="titleColor" red="0.80797433853149414" green="0.33159855008125305" blue="0.20072141289710999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="topLine" translatesAutoresizingMaskIntoConstraints="NO" id="aab-qg-mEI">
+                                <rect key="frame" x="0.0" y="40" width="320" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PinIcon-1" translatesAutoresizingMaskIntoConstraints="NO" id="qW4-mH-fVw">
+                                <rect key="frame" x="104" y="11" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82421261072158813" green="0.82430601119995117" blue="0.82415878772735596" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qgB-g8-DZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2u7-Tk-Ydw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="390" y="348"/>
         </scene>
     </scenes>
     <resources>
+        <image name="PinIcon-1" width="35" height="35"/>
         <image name="blueLine" width="4" height="50"/>
         <image name="mapIcon" width="25" height="25"/>
         <image name="pinIcon" width="25" height="25"/>
