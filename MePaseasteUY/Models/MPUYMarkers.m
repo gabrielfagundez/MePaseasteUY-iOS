@@ -7,6 +7,7 @@
 //
 
 #import "MPUYMarkers.h"
+#import "util.h"
 
 @implementation MPUYMarkers
 
@@ -21,7 +22,9 @@
     NSDictionary *marker = [[NSDictionary alloc]
                             initWithObjectsAndKeys:
                                 [NSNumber numberWithFloat:latitude], @"latitude",
-                                [NSNumber numberWithFloat:longitude], @"longitude", nil];
+                                [NSNumber numberWithFloat:longitude], @"longitude",
+                                @"", @"geocodedPosition",
+                            nil];
     
     // Add the last object
     [self.markersArray addObject:marker];
@@ -29,6 +32,11 @@
 
 - (void) resetMarkers{
     self.markersArray = [[NSMutableArray alloc] init];
+};
+
++ (NSString *) formattedPosition: (NSString *)latitude: (NSString *)longitude {
+    NSString *formattedString = [NSString stringWithFormat:@"(%@, %@)", latitude, longitude];
+    return formattedString;
 };
 
 @end

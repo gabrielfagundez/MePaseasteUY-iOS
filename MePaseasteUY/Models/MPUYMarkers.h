@@ -13,7 +13,7 @@
 @property (strong, nonatomic) NSMutableArray *markersArray;
 
 - (void) addMarker: (float)latitude: (float)longitude;
-
 - (void) resetMarkers;
++ (NSString *) formattedPosition: (NSString *)latitude: (NSString *)longitude;
 
 @end

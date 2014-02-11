@@ -10,6 +10,7 @@
 #import "MPUYMarkerTableViewCell.h"
 #import "MPUYMarkers.h"
 #import "MPUYAppDelegate.h"
+#import "MPUYMarkerDetailViewController.h"
 
 @interface MPUYMarkersViewController ()
 
@@ -42,9 +43,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    // Reload data to handle the case that the user added a new marker
     [self.tableView reloadData];
-    NSLog(@"i just ran viewwillAppear");
-    
 }
 
 #pragma mark - Table view data source
@@ -59,7 +59,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Creating the table..");
     
     // This is the identifier of the cell
     static NSString *CellIdentifier = @"MarkerTableViewCell";
@@ -67,7 +66,16 @@
     // Get the table cell
     MPUYMarkerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    //cell.markerName.text = [self.markersArray objectAtIndex:indexPath.row];
+    // Set the Latitude/Longitude of the point
+    NSString *latitude = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"latitude"];
+    NSString *longitude = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"longitude"];
+    cell.markerLatitudeLongitude.text = [MPUYMarkers formattedPosition:latitude :longitude];
+    
+    // Set the geocodedPosition
+    NSString *geocodedPosition = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"geocodedPosition"];
+    if ([geocodedPosition  isEqual: @""]){
+        cell.markerGeocodedLocation.text = @"Getting address...";
+    }
     
     
     // Configure the cell...
@@ -114,17 +122,20 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"MarkerDetailViewSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSLog(@"%@", [self.markersArray objectAtIndex:indexPath.row]);
+        
+        MPUYMarkerDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.latitude = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"latitude"];
+        destViewController.longitude = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"longitude"];
+    }
 }
-
- */
 
 
 #pragma mark - Private markers methods

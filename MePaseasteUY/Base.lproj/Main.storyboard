@@ -98,7 +98,9 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="markerName" destination="fO6-ez-6o8" id="grJ-ez-fQK"/>
+                                    <outlet property="markerGeocodedLocation" destination="h5L-rw-qfG" id="5Kv-fz-NRo"/>
+                                    <outlet property="markerLatitudeLongitude" destination="fO6-ez-6o8" id="fwo-ob-fMd"/>
+                                    <segue destination="dba-fa-sAX" kind="push" identifier="MarkerDetailViewSegue" id="eKf-eB-7DC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -109,7 +111,43 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q51-Xn-m0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="-373"/>
+            <point key="canvasLocation" x="390" y="-373"/>
+        </scene>
+        <!--Marker Detail View Controller-->
+        <scene sceneID="CTR-zM-sJn">
+            <objects>
+                <viewController id="dba-fa-sAX" customClass="MPUYMarkerDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n0h-e6-4mF"/>
+                        <viewControllerLayoutGuide type="bottom" id="PqC-dg-oQf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6vc-tP-4oG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eZ3-1j-0qo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="403"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eh0-21-LXH">
+                                <rect key="frame" x="0.0" y="401" width="320" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="RW3-J7-nwP" kind="embed" id="4hJ-YB-8u7"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AVU-g1-UFH"/>
+                    <connections>
+                        <outlet property="mapView" destination="eZ3-1j-0qo" id="0tT-jt-bYU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQO-g0-DKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="-373"/>
         </scene>
         <!--Navigation Controller - Marcadores-->
         <scene sceneID="5El-s6-Dp1">
@@ -126,6 +164,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7B-CV-715" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-164" y="-373"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yYk-8I-ecg">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RW3-J7-nwP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xes-Fm-8wG"/>
+                        <viewControllerLayoutGuide type="bottom" id="0dh-Xk-YVT"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aQa-72-T1N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qgB-g8-DZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

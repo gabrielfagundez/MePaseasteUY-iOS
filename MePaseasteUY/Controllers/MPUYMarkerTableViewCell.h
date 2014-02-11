@@ -10,7 +10,7 @@
 
 @interface MPUYMarkerTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *markerName;
-@property (weak, nonatomic) IBOutlet UILabel *markerPosition;
+@property (weak, nonatomic) IBOutlet UILabel *markerGeocodedLocation;
+@property (weak, nonatomic) IBOutlet UILabel *markerLatitudeLongitude;
 
 @end

@@ -26,6 +26,7 @@
 		80EBEC2B1895CAB6005967DD /* MPUYMarkers.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EBEC2A1895CAB6005967DD /* MPUYMarkers.m */; };
 		80EBEC2E189692A3005967DD /* MPUYMarkersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EBEC2D189692A3005967DD /* MPUYMarkersViewController.m */; };
 		80EBEC3118969AA0005967DD /* MPUYMarkerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EBEC3018969AA0005967DD /* MPUYMarkerTableViewCell.m */; };
+		80EBEC371896E9B4005967DD /* MPUYMarkerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EBEC361896E9B4005967DD /* MPUYMarkerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		80EBEC2D189692A3005967DD /* MPUYMarkersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPUYMarkersViewController.m; path = Controllers/MPUYMarkersViewController.m; sourceTree = "<group>"; };
 		80EBEC2F18969AA0005967DD /* MPUYMarkerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPUYMarkerTableViewCell.h; path = Controllers/MPUYMarkerTableViewCell.h; sourceTree = "<group>"; };
 		80EBEC3018969AA0005967DD /* MPUYMarkerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPUYMarkerTableViewCell.m; path = Controllers/MPUYMarkerTableViewCell.m; sourceTree = "<group>"; };
+		80EBEC351896E9B4005967DD /* MPUYMarkerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPUYMarkerDetailViewController.h; path = Controllers/MPUYMarkerDetailViewController.h; sourceTree = "<group>"; };
+		80EBEC361896E9B4005967DD /* MPUYMarkerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPUYMarkerDetailViewController.m; path = Controllers/MPUYMarkerDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,14 +131,14 @@
 		80EBEBEF18955E7E005967DD /* MePaseasteUY */ = {
 			isa = PBXGroup;
 			children = (
-				80EBEC2618958E79005967DD /* MPUYViewController.h */,
-				80EBEC2718958E79005967DD /* MPUYViewController.m */,
 				80EBEC2C189692A3005967DD /* MPUYMarkersViewController.h */,
 				80EBEC2D189692A3005967DD /* MPUYMarkersViewController.m */,
 				80EBEC2F18969AA0005967DD /* MPUYMarkerTableViewCell.h */,
 				80EBEC3018969AA0005967DD /* MPUYMarkerTableViewCell.m */,
 				80EBEBFB18955E7E005967DD /* Main.storyboard */,
 				80EBEBF018955E7E005967DD /* Supporting Files */,
+				80EBEC351896E9B4005967DD /* MPUYMarkerDetailViewController.h */,
+				80EBEC361896E9B4005967DD /* MPUYMarkerDetailViewController.m */,
 			);
 			path = MePaseasteUY;
 			sourceTree = "<group>";
@@ -143,11 +146,13 @@
 		80EBEBF018955E7E005967DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				80EBEC2A1895CAB6005967DD /* MPUYMarkers.m */,
+				80EBEC291895CAB6005967DD /* MPUYMarkers.h */,
+				80EBEC2618958E79005967DD /* MPUYViewController.h */,
+				80EBEC2718958E79005967DD /* MPUYViewController.m */,
 				80EBEC0118955E7E005967DD /* Images.xcassets */,
 				80EBEC2018956CF0005967DD /* MPUYMap.h */,
 				80EBEC2118956CF0005967DD /* MPUYMap.m */,
-				80EBEC291895CAB6005967DD /* MPUYMarkers.h */,
-				80EBEC2A1895CAB6005967DD /* MPUYMarkers.m */,
 				80EBEBF818955E7E005967DD /* MPUYAppDelegate.h */,
 				80EBEBF918955E7E005967DD /* MPUYAppDelegate.m */,
 				80EBEBF118955E7E005967DD /* MePaseasteUY-Info.plist */,
@@ -278,6 +283,7 @@
 				80EBEC2818958E79005967DD /* MPUYViewController.m in Sources */,
 				80EBEC2218956CF0005967DD /* MPUYMap.m in Sources */,
 				80EBEC2B1895CAB6005967DD /* MPUYMarkers.m in Sources */,
+				80EBEC371896E9B4005967DD /* MPUYMarkerDetailViewController.m in Sources */,
 				80EBEBFA18955E7E005967DD /* MPUYAppDelegate.m in Sources */,
 				80EBEC3118969AA0005967DD /* MPUYMarkerTableViewCell.m in Sources */,
 				80EBEC2E189692A3005967DD /* MPUYMarkersViewController.m in Sources */,
@@ -489,6 +495,7 @@
 				80EBEC1A18955E7E005967DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80EBEC1B18955E7E005967DD /* Build configuration list for PBXNativeTarget "MePaseasteUYTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +504,7 @@
 				80EBEC1D18955E7E005967DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
