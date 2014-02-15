@@ -8,6 +8,8 @@
 
 #import "MPUYResultViewController.h"
 #import "MPUYMap.h"
+#import "MPUYBackendProxy.h"
+#import "MPUYServerResponse.h"
 #import "MPUYAppDelegate.h"
 
 @interface MPUYResultViewController ()
@@ -15,6 +17,8 @@
 @end
 
 @implementation MPUYResultViewController
+
+@synthesize spinner;
 
 - (void)viewDidLoad
 {
@@ -26,6 +30,9 @@
         
     // Set initial map options
     [self setMapOptions];
+
+    // Show the spinner
+    [self showSpinner];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +44,9 @@
 - (void) viewDidAppear:(BOOL)animated {
     [self addMarkers];
     [self setMapInitialRegion];
+    
+    // Make the query to the server
+    [self getResultsFromServer];
 }
 
 #pragma mark - Private Map Methods
@@ -86,5 +96,37 @@
     self.markersArray = appDelegate.markers;
     
 }
+
+#pragma mark - Make query to the server
+- (void) getResultsFromServer {
+    
+    // Check if internet is available and the make the query
+    if ([MPUYBackendProxy internetConnection]){
+        [MPUYBackendProxy makeNewQuery:self.markersArray];
+        [spinner setHidden:YES];
+    }
+    else {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"La conexión falló", nil)
+                                                         message:NSLocalizedString(@"Por favor, conéctate a internet y prueba de nuevo", nil)
+                                                        delegate:self
+                                               cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                                               otherButtonTitles:nil];
+        [alert show];
+        [spinner setHidden:YES];
+    }
+    
+}
+
+#pragma mark - View details methods
+- (void) showSpinner {
+    spinner = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.color=[UIColor grayColor];
+    spinner.center = self.view.center;
+    [self.view addSubview: spinner];
+    
+    [spinner setHidden:NO];
+    [spinner startAnimating];
+}
+
 
 @end

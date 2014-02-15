@@ -11,11 +11,14 @@
 
 @class MPUYMap;
 
-@interface MPUYResultViewController : UIViewController
+@interface MPUYResultViewController : UIViewController {
+    UIActivityIndicatorView *spinner;
+}
 
 @property (strong, nonatomic) MPUYMap * mapModel;
 @property (strong, nonatomic) NSArray * markersArray;
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property(nonatomic,retain) UIActivityIndicatorView *spinner;
 
 @end

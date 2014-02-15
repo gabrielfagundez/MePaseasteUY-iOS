@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		80CB280018AACD770097D09E /* MPUYResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CB27FF18AACD770097D09E /* MPUYResultViewController.m */; };
+		80E26D3818AD748100625AD3 /* MPUYBackendProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E26D3718AD748100625AD3 /* MPUYBackendProxy.m */; };
+		80E26D3B18AD75AD00625AD3 /* MPUYServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E26D3A18AD75AD00625AD3 /* MPUYServerResponse.m */; };
+		80E26D3E18AD95BF00625AD3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E26D3D18AD95BF00625AD3 /* Reachability.m */; };
 		80EBEBEA18955E7E005967DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EBEBE918955E7E005967DD /* Foundation.framework */; };
 		80EBEBEC18955E7E005967DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EBEBEB18955E7E005967DD /* CoreGraphics.framework */; };
 		80EBEBEE18955E7E005967DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EBEBED18955E7E005967DD /* UIKit.framework */; };
@@ -43,6 +46,12 @@
 /* Begin PBXFileReference section */
 		80CB27FE18AACD770097D09E /* MPUYResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPUYResultViewController.h; path = Controllers/MPUYResultViewController.h; sourceTree = "<group>"; };
 		80CB27FF18AACD770097D09E /* MPUYResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPUYResultViewController.m; path = Controllers/MPUYResultViewController.m; sourceTree = "<group>"; };
+		80E26D3618AD748100625AD3 /* MPUYBackendProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPUYBackendProxy.h; path = Models/MPUYBackendProxy.h; sourceTree = "<group>"; };
+		80E26D3718AD748100625AD3 /* MPUYBackendProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPUYBackendProxy.m; path = Models/MPUYBackendProxy.m; sourceTree = "<group>"; };
+		80E26D3918AD75AD00625AD3 /* MPUYServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPUYServerResponse.h; path = Models/MPUYServerResponse.h; sourceTree = "<group>"; };
+		80E26D3A18AD75AD00625AD3 /* MPUYServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPUYServerResponse.m; path = Models/MPUYServerResponse.m; sourceTree = "<group>"; };
+		80E26D3C18AD95BF00625AD3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = MePaseasteUY/Lib/Reachability.h; sourceTree = "<group>"; };
+		80E26D3D18AD95BF00625AD3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = MePaseasteUY/Lib/Reachability.m; sourceTree = "<group>"; };
 		80EBEBE618955E7E005967DD /* MePaseasteUY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MePaseasteUY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EBEBE918955E7E005967DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		80EBEBEB18955E7E005967DD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,6 +112,8 @@
 		80EBEBDD18955E7E005967DD = {
 			isa = PBXGroup;
 			children = (
+				80E26D3C18AD95BF00625AD3 /* Reachability.h */,
+				80E26D3D18AD95BF00625AD3 /* Reachability.m */,
 				80EBEBEF18955E7E005967DD /* MePaseasteUY */,
 				80EBEC0E18955E7E005967DD /* MePaseasteUYTests */,
 				80EBEBE818955E7E005967DD /* Frameworks */,
@@ -140,6 +151,10 @@
 				80CB27FE18AACD770097D09E /* MPUYResultViewController.h */,
 				80CB27FF18AACD770097D09E /* MPUYResultViewController.m */,
 				80EBEBF018955E7E005967DD /* Supporting Files */,
+				80E26D3618AD748100625AD3 /* MPUYBackendProxy.h */,
+				80E26D3718AD748100625AD3 /* MPUYBackendProxy.m */,
+				80E26D3918AD75AD00625AD3 /* MPUYServerResponse.h */,
+				80E26D3A18AD75AD00625AD3 /* MPUYServerResponse.m */,
 			);
 			path = MePaseasteUY;
 			sourceTree = "<group>";
@@ -284,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E26D3818AD748100625AD3 /* MPUYBackendProxy.m in Sources */,
 				80EBEBF618955E7E005967DD /* main.m in Sources */,
 				80EBEC2818958E79005967DD /* MPUYViewController.m in Sources */,
 				80EBEC2218956CF0005967DD /* MPUYMap.m in Sources */,
@@ -293,6 +309,8 @@
 				80EBEBFA18955E7E005967DD /* MPUYAppDelegate.m in Sources */,
 				80EBEC3118969AA0005967DD /* MPUYMarkerTableViewCell.m in Sources */,
 				80EBEC2E189692A3005967DD /* MPUYMarkersViewController.m in Sources */,
+				80E26D3E18AD95BF00625AD3 /* Reachability.m in Sources */,
+				80E26D3B18AD75AD00625AD3 /* MPUYServerResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

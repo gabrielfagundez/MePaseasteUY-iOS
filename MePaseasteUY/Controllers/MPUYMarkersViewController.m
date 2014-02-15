@@ -18,6 +18,8 @@
 
 @implementation MPUYMarkersViewController
 
+@synthesize spinner;
+
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
@@ -145,6 +147,17 @@
     MPUYAppDelegate *appDelegate = (MPUYAppDelegate*) [UIApplication sharedApplication].delegate;
     self.markersArray = appDelegate.markers;
     
+}
+
+#pragma mark - View details methods
+- (void) showSpinner {
+    spinner = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.color=[UIColor grayColor];
+    spinner.center = self.view.center;
+    [self.view addSubview: spinner];
+    
+    [spinner setHidden:NO];
+    [spinner startAnimating];
 }
 
 @end
