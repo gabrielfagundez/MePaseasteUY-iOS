@@ -109,7 +109,7 @@
         [self hideSpinner];
         
         // Add text from the server to the response page
-        NSString * costoSymbol = @"$";
+        NSString * costoSymbol = @"$ ";
         NSString * costoFromServer = [jsonResponse objectForKey:@"costo_total"];
         self.labelCosto.text =      [costoSymbol stringByAppendingString:costoFromServer];
         self.labelCantTaxis.text =  [jsonResponse objectForKey:@"cant_taxis"];

@@ -34,7 +34,7 @@ NSString * newQueryUrl          = @"/api/queries";
     
     // Create the JSON
     NSDictionary * jsonHash = [NSDictionary dictionaryWithObjectsAndKeys:
-                               markers, @"markers",
+                               markers, @"marcadores",
                                @"diurna", @"tipo_tarifa",
                                nil
                                ];
