@@ -30,9 +30,6 @@
         
     // Set initial map options
     [self setMapOptions];
-
-    // Show the spinner
-    [self showSpinner];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,6 +39,9 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+    // Show the spinner
+    [self showSpinner];
+    
     [self addMarkers];
     [self setMapInitialRegion];
     

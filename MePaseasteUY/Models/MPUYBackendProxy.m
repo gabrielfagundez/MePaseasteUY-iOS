@@ -31,10 +31,11 @@ NSString * newQueryUrl          = @"/api/queries";
 }
 
 + (MPUYServerResponse *) makeNewQuery:(NSArray *) markers{
-  
+    
     // Create the JSON
     NSDictionary * jsonHash = [NSDictionary dictionaryWithObjectsAndKeys:
-                               @"cant_markers", @"1",
+                               markers, @"markers",
+                               @"diurna", @"tipo_tarifa",
                                nil
                                ];
     
