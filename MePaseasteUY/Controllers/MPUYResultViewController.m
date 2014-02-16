@@ -102,8 +102,19 @@
     
     // Check if internet is available and the make the query
     if ([MPUYBackendProxy internetConnection]){
-        [MPUYBackendProxy makeNewQuery:self.markersArray];
-        [spinner setHidden:YES];
+        MPUYServerResponse * serverResponse = [MPUYBackendProxy makeNewQuery:self.markersArray];
+        NSDictionary * jsonResponse = [serverResponse getJson];
+        
+        // Hide the loading spinner
+        [self hideSpinner];
+        
+        // Add text from the server to the response page
+        NSString * costoSymbol = @"$";
+        NSString * costoFromServer = [jsonResponse objectForKey:@"costo_total"];
+        self.labelCosto.text =      [costoSymbol stringByAppendingString:costoFromServer];
+        self.labelCantTaxis.text =  [jsonResponse objectForKey:@"cant_taxis"];
+        self.labelDestinos.text =   [jsonResponse objectForKey:@"cant_destinos"];
+        
     }
     else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"La conexión falló", nil)
@@ -126,6 +137,10 @@
     
     [spinner setHidden:NO];
     [spinner startAnimating];
+}
+
+- (void) hideSpinner {
+    [spinner setHidden:YES];
 }
 
 
