@@ -346,7 +346,7 @@
         <image name="topLine" width="600" height="4"/>
         <image name="whiteSquare" width="600" height="600"/>
     </resources>
-    <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.48627450980392156" green="0.67450980392156867" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
