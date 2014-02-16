@@ -11,6 +11,8 @@
 #import "MPUYMarkers.h"
 #import "MPUYAppDelegate.h"
 #import "MPUYMarkerDetailViewController.h"
+#import "MPUYServerResponse.h"
+#import "MPUYBackendProxy.h"
 
 @interface MPUYMarkersViewController ()
 
@@ -31,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setMarkersArrayFromDelegate];
+    self.markersModel   = [[MPUYMarkers alloc] init];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -69,14 +72,24 @@
     MPUYMarkerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Set the Latitude/Longitude of the point
-    NSString *latitude = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"latitude"];
-    NSString *longitude = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"longitude"];
-    cell.markerLatitudeLongitude.text = [MPUYMarkers formattedPosition:latitude :longitude];
+    NSString *latitude = [[[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"latitude"] stringValue];
+    NSString *longitude = [[[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"longitude"] stringValue];
+    // cell.markerLatitudeLongitude.text = [MPUYMarkers formattedPosition:latitude :longitude];
+    cell.markerLatitudeLongitude.text = @"Toca para ver más detalles";
+    
+    // Geocode
+    MPUYServerResponse * serverResponse = [MPUYBackendProxy geocodeAddress: latitude: longitude];
+    NSDictionary * jsonResponse = [serverResponse getJson];
     
     // Set the geocodedPosition
-    NSString *geocodedPosition = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"geocodedPosition"];
+    NSString * geocodedPosition = [[[[[jsonResponse objectForKey:@"results"] objectAtIndex:0] objectForKey:@"address_components"] objectAtIndex:2] objectForKey:@"long_name"];
+
+    [self.markersModel addDirection:geocodedPosition];
+    
     if ([geocodedPosition  isEqual: @""]){
         cell.markerGeocodedLocation.text = @"Getting address...";
+    } else {
+        cell.markerGeocodedLocation.text = geocodedPosition;
     }
     
     
@@ -136,6 +149,7 @@
         MPUYMarkerDetailViewController *destViewController = segue.destinationViewController;
         destViewController.latitude = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"latitude"];
         destViewController.longitude = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"longitude"];
+        destViewController.direction = [[self.markersArray objectAtIndex:indexPath.row] objectForKey:@"geocodedPosition"];
     }
 }
 

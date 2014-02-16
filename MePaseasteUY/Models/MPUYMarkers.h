@@ -11,8 +11,10 @@
 @interface MPUYMarkers : NSObject
 
 @property (strong, nonatomic) NSMutableArray *markersArray;
+@property (strong, nonatomic) NSMutableArray *directionsArray;
 
 - (void) addMarker: (float)latitude: (float)longitude;
+- (void) addDirection: (NSString *) direction;
 - (void) resetMarkers;
 + (NSString *) formattedPosition: (NSString *)latitude: (NSString *)longitude;
 

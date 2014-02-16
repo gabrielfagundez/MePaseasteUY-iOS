@@ -19,7 +19,7 @@
     };
     
     // Create the new marker
-    NSDictionary *marker = [[NSDictionary alloc]
+    NSDictionary * marker = [[NSDictionary alloc]
                             initWithObjectsAndKeys:
                                 [NSNumber numberWithFloat:latitude], @"latitude",
                                 [NSNumber numberWithFloat:longitude], @"longitude",
@@ -28,6 +28,17 @@
     
     // Add the last object
     [self.markersArray addObject:marker];
+};
+
+- (void) addDirection:(NSString *)direction {
+    
+    // If neccesary, initialize the array
+    if (self.directionsArray == nil){
+        self.directionsArray = [[NSMutableArray alloc] init];
+    };
+    
+    // Add the last object
+    [self.directionsArray addObject:direction];
 };
 
 - (void) resetMarkers{

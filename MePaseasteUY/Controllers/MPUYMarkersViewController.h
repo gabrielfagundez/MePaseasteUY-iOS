@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class MPUYMarkers;
+
 @interface MPUYMarkersViewController : UITableViewController {
     UIActivityIndicatorView *spinner;
 }
 
 @property (strong, nonatomic) NSArray * markersArray;
 @property(nonatomic,retain) UIActivityIndicatorView *spinner;
+@property (strong, nonatomic) MPUYMarkers * markersModel;
 
 @end

@@ -40,9 +40,12 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     // Show the spinner
-    [self showSpinner];
+    //[self showSpinner];
     
+    // Add Markers to the map
     [self addMarkers];
+    
+    // Set the initial region
     [self setMapInitialRegion];
     
     // Make the query to the server

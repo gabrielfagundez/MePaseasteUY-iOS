@@ -18,6 +18,7 @@
 @property (strong, nonatomic) MPUYMap * mapModel;
 @property (strong, nonatomic) NSArray * markersArray;
 @property (nonatomic, retain) UIActivityIndicatorView * spinner;
+@property (weak, nonatomic) IBOutlet UIButton *detailsView;
 
 @property (nonatomic, retain) IBOutlet MKMapView * mapView;
 @property (nonatomic, retain) IBOutlet UIImageView * imageView;

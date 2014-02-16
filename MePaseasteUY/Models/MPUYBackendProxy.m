@@ -16,6 +16,8 @@ NSString * host                 = @"http://www.mepaseaste.uy";
 NSString * rechabilityHost      = @"www.mepaseaste.uy";
 NSString * newQueryUrl          = @"/api/queries";
 
+NSString * geocodeHost          = @"http://maps.googleapis.com/maps/api/geocode/json?sensor=false&";
+
 + (bool)internetConnection{
     
     // Check connection to the server
@@ -100,5 +102,65 @@ NSString * newQueryUrl          = @"/api/queries";
     }
 };
 
++ (MPUYServerResponse *) geocodeAddress:(NSString *) latitude: (NSString *) longitude{
+    
+    // Create the url
+    NSString * url = [geocodeHost copy];
+    url = [url stringByAppendingString:@"address="];
+    url = [url stringByAppendingString:latitude];
+    url = [url stringByAppendingString:@","];
+    url = [url stringByAppendingString:longitude];
+    
+    // Make the HTTP POST
+    NSMutableURLRequest * request = [NSMutableURLRequest
+                                     requestWithURL:[NSURL URLWithString:url]];
+    
+    // Temporal variables
+    NSError * error;
+    
+    // Create the request
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"GET"];
+    
+    NSHTTPURLResponse * urlResponse = nil;
+    error = [[NSError alloc] init];
+    
+    // Make the request
+    NSData * responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    NSString * result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    // --------------------------------
+    // Log the response - Just to verify
+    //NSLog(@"Response: %@", result);
+    //NSLog(@"Response: %ld", (long)urlResponse.statusCode);
+    // --------------------------------
+    
+    
+    // Differenciate between Success and Error
+    if ((long)urlResponse.statusCode == 200) {
+        
+        // Make a JSON from to handle server response
+        NSError * jsonParsingError = nil;
+        NSDictionary * data = [NSJSONSerialization JSONObjectWithData:responseData
+                                                              options:0
+                                                                error:&jsonParsingError];
+        
+        // Create the Server Response object
+        MPUYServerResponse * sr = [MPUYServerResponse alloc];
+        sr = [sr initialize :(NSInteger)urlResponse.statusCode :data];
+        
+        return sr;
+    }
+    else {
+        
+        // Return an empty Server Response Object
+        MPUYServerResponse * sr = [MPUYServerResponse alloc];
+        sr = [sr initialize :(NSInteger)urlResponse.statusCode :NULL];
+        
+        return sr;
+    }
+
+    
+};
 
 @end

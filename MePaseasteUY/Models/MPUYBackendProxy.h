@@ -13,5 +13,6 @@
 
 + (bool)internetConnection;
 + (MPUYServerResponse *) makeNewQuery:(NSArray *) markers;
++ (MPUYServerResponse *) geocodeAddress:(NSString *) latitude: (NSString *) longitude;
 
 @end

@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *longitude;
+@property (strong, nonatomic) NSString *direction;
 @property (strong, nonatomic) NSString *indexOfPoint;
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
